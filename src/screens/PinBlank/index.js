@@ -1,15 +1,39 @@
 import React from 'react';
-import {ScrollView, Text, View, Dimensions} from 'react-native';
+import {ScrollView, Text, View, Dimensions, ToastAndroid} from 'react-native';
 // import {ScrollView} from 'react-native-gesture-handler';
 import {Button, TextInput} from 'react-native-paper';
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input';
-import { useState } from 'react/cjs/react.development';
+import { useDispatch } from 'react-redux';
+import { onRegister } from '../../redux/actions/Auth';
 
 const {width} = Dimensions.get('screen');
 
-const PinBlank = ({navigation}) => {
+const PinBlank = ({navigation, route}) => {
   const pinInput = React.useRef();
-  const [pin, setPin] = useState('');
+  const [pin, setPin] = React.useState('');
+  const [loading, setLoading] = React.useState(false)
+  const {name, email, password} = route.params;
+  const dispatch = useDispatch();
+
+  const onRegistrasi = () =>{
+    setLoading(true)
+    const post = {
+      pin,
+      name: name,
+      password: password,
+      email: email,
+    }
+    console.log(post);
+    const callbackHandler = (err, res) =>{
+      setLoading(false)
+      if(!err){
+        ToastAndroid.show("Regitrasi successfully", ToastAndroid.SHORT)
+        navigation.replace('PinSuccess')
+      }
+    }
+    dispatch(onRegister(post, callbackHandler));
+  }
+
   return (
     <>
       <ScrollView style={{backgroundColor: '#e9eef7'}}>
@@ -67,15 +91,11 @@ const PinBlank = ({navigation}) => {
             ref={pinInput}
             codeLength={6}
             value={pin}
+            loading={loading}
             onTextChange={(text) => setPin(text)}
             returnKeyType="send"
-            // onSubmitEditing={() => onPin()}
+            onSubmitEditing={() => onRegistrasi()}
           />
-      
-           
-           
-          
-        
           </View>
           <View style={{padding: 20}}>
             <Button
@@ -86,7 +106,8 @@ const PinBlank = ({navigation}) => {
                 borderRadius: 15,
               }}
               mode="contained"
-              onPress={() => navigation.navigate('PinSuccess')}>
+              loading={loading}
+              onPress={() => onRegistrasi()}>
               Confirm
             </Button>
           </View>

@@ -41,6 +41,11 @@ const Users = (state = initState, action = {}) => {
           balance: action.payload,
         },
       };
+      case 'SET_USERS_TRANSACTION':
+        return {
+          ...state,
+          data: action.payload,
+        };
     default:
       return state;
   }

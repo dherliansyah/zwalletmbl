@@ -2,7 +2,7 @@ import {combineReducers} from 'redux';
 import Auth from './Auth';
 import Topup from './Topup';
 import Users from './Users';
-// import History from './History';
+import History from './History';
 import Search from './Search';
 // import ChangePassword from './ChangePassword';
 // import ChangePin from './ChangePin';
@@ -14,7 +14,7 @@ const reducers = combineReducers({
   Auth,
   Users,
   Topup,
-  // History,
+  History,
   Search,
   // ChangePassword,
   // ChangePin,

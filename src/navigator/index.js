@@ -4,29 +4,21 @@ import {NavigationContainer} from '@react-navigation/native';
 import {
   AddPhone,
   ChangePassword,
-  // ChangePin,
   Confirmation,
   ChangePin,
-  // Confirmation,
-  // Details,
-  // ForgotPassword,
-  // History,
+  Details,
+  ForgotPassword,
+  History,
   Home,
   Login,
   ManagePhone,
-  // Notification,
-  // PinBlank,
+  Notification,
   PinConfirmation,
-  // PinSuccess,
-  // ResPasswordBlank,
   Search,
-  // Signup,
   PinBlank,
-  // PinConfirmation,
   PinSuccess,
   Profile,
-  // ResPasswordBlank,
-  // Search,
+  ResPasswordBlank,
   Signup,
   Success,
   Topup,
@@ -111,17 +103,19 @@ const MainNavigator = () => {
           component={Topup}
           options={{headerShown: false}}
         />
-
-        {/* 
-
         <Stack.Screen
           name="ForgotPassword"
           component={ForgotPassword}
           options={{headerShown: false}}
-        />
+          />
         <Stack.Screen
           name="ResPasswordBlank"
           component={ResPasswordBlank}
+          options={{headerShown: false}}
+          />
+        <Stack.Screen
+          name="History"
+          component={History}
           options={{headerShown: false}}
         />
         <Stack.Screen
@@ -129,16 +123,6 @@ const MainNavigator = () => {
           component={Details}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="History"
-          component={History}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Topup"
-          component={Topup}
-          options={{headerShown: false}}
-        /> */}
         <Stack.Screen
           name="Search"
           component={Search}
@@ -164,11 +148,11 @@ const MainNavigator = () => {
           component={Success}
           options={{headerShown: false}}
         />
-        {/*<Stack.Screen
+        <Stack.Screen
           name="Notification"
           component={Notification}
           options={{headerShown: false}}
-        />*/}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

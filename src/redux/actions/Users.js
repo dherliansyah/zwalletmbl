@@ -16,6 +16,22 @@ export const onUsers = (data, callback) => {
 	};
 };
 
+export const onUserAllTransaction = (data, callback) => {
+	return (dispatch) => {
+		axios
+			.get('transfer/history/all', {
+				headers: {
+					Authorization: `Bearer ${data}`
+				}
+			})
+			.then((response) =>{
+				dispatch({type: 'SET_USERS_TRANSACTION', payload: response.data.data[0]});
+				callback(false, response);
+			})
+			.catch((error) => errorHandler(error, callback));
+	};
+};
+
 export const onChangeName = (data, token, callback) => {
 	return (dispatch) => {
 		axios
@@ -64,17 +80,18 @@ export const onChangePin = (data, token, callback) => {
 };
 
 export const onSearchUser = (data, token, callback) => {
-    console.log(token)
-    return (dispatch) => {
-        axios.get(`/users/search/query?q=${data}`, {
-            headers:{
-                Authorization: `Bearer ${token}`
-            }
-        })
-            .then((response) => {
-                dispatch({type: "SET_SEARCH", payload: response.data.data})
-                callback(false, response)
-            })
-            .catch((error) => errorHandler(error, callback));
-    }
-}
+	console.log(token);
+	return (dispatch) => {
+		axios
+			.get(`/users/search/query?q=${data}`, {
+				headers: {
+					Authorization: `Bearer ${token}`
+				}
+			})
+			.then((response) => {
+				dispatch({ type: 'SET_SEARCH', payload: response.data.data });
+				callback(false, response);
+			})
+			.catch((error) => errorHandler(error, callback));
+	};
+};

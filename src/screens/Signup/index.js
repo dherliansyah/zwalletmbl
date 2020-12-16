@@ -7,7 +7,7 @@ import {useDispatch} from 'react-redux';
 const Signup = ({navigation}) => {
   const inputPassword = React.useRef();
   const inputEmail = React.useRef();
-  const [username, setusername] = React.useState('');
+  const [name, setname] = React.useState('');
   const [email, setemail] = React.useState('');
   const [password, setpassword] = React.useState('');
   // const dispatch = useDispatch();
@@ -96,8 +96,8 @@ const Signup = ({navigation}) => {
               label="Username"
               placeholder="Enter your username"
               autoCapitalize={'none'}
-              value={username}
-              onChangeText={(text) => setusername(text)}
+              value={name}
+              onChangeText={(text) => setname(text)}
               returnKeyType="next"
               onSubmitEditing={() => inputEmail.current.focus()}
             />
@@ -137,7 +137,7 @@ const Signup = ({navigation}) => {
               onChangeText={(text) => setpassword(text)}
               returnKeyType="send"
               secureTextEntry={true}
-              onSubmitEditing={() => navigation.navigate('PinBlank',{username, email, password})}
+              onSubmitEditing={() => navigation.navigate('PinBlank',{name, email, password})}
             />
           </View>
           <View style={{padding: 20}}>
@@ -148,7 +148,7 @@ const Signup = ({navigation}) => {
                 borderRadius: 15,
               }}
               mode="contained"
-              onPress={() => navigation.navigate('PinBlank',{setusername, setemail, setpassword})}>
+              onPress={() => navigation.navigate('PinBlank',{name, email, password})}>
               Sign Up
             </Button>
           </View>

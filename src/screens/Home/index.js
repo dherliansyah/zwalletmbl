@@ -77,7 +77,7 @@ const Home = ({ navigation }) => {
 						</Text>
 					</View>
 					<View style={{ flex: 2 }}>
-						<IconButton icon="bell-outline" size={35} onPress={() => dispatch(LoginLogout())} />
+						<IconButton icon="bell-outline" size={35} onPress={() => navigation.navigate('Notification')} />
 					</View>
 				</View>
 				<View

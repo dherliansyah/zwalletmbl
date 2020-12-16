@@ -3,20 +3,12 @@ import {View, Text, Image} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {IconButton} from 'react-native-paper';
 import {useDispatch, useSelector} from 'react-redux';
-import {HistoryUser} from '../../redux/actions/History';
 
 const Details = ({navigation}) => {
   const dispatch = useDispatch();
   const {data} = useSelector((s) => s.History);
   const {token} = useSelector((s) => s.Auth);
 
-  React.useEffect(() => {
-    dispatch(
-      HistoryUser({
-        token: token.token.token,
-      }),
-    );
-  }, []);
   return (
     <ScrollView style={{backgroundColor: '#e9eef7'}}>
       <View style={{flexDirection: 'row'}}>
@@ -130,7 +122,7 @@ const Details = ({navigation}) => {
           </View>
         </View>
       </View>
-
+{/* 
       {data.map((item, index) => {
         return (
           <View
@@ -166,7 +158,7 @@ const Details = ({navigation}) => {
             </View>
           </View>
         );
-      })}
+      })} */}
     </ScrollView>
   );
 };
