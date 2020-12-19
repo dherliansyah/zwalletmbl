@@ -2,8 +2,8 @@ import axiosinstance from 'axios'
 import { ToastAndroid } from 'react-native';
 
 
-export const URL_IMAGE = 'http://3.90.64.153:8000'; 
-export const URL = 'http://3.90.64.153:8000/api/v1';
+export const URL_IMAGE = 'http://35.170.53.20:8000'; 
+export const URL = 'http://35.170.53.20:8000/api/v1';
 export const axios = axiosinstance.create({
     baseURL: URL,
 })
