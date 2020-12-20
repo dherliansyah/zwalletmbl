@@ -70,7 +70,7 @@ const PersonalInformation = ({navigation}) => {
                 color: '#7A7886',
                 fontSize: 16,
               }}>
-              First Name
+              Name
             </Text>
             <Text
               style={{
@@ -92,27 +92,6 @@ const PersonalInformation = ({navigation}) => {
             marginBottom: 5,
             marginTop: 10,
           }}>
-          <View style={{flexDirection: 'column', flex: 9, height: 96}}>
-            <Text
-              style={{
-                paddingLeft: 20,
-                paddingTop: 20,
-                color: '#7A7886',
-                fontSize: 16,
-              }}>
-              Last Name
-            </Text>
-            <Text
-              style={{
-                paddingLeft: 20,
-                paddingTop: 10,
-                fontSize: 20,
-                color: '#646464',
-                fontWeight: 'bold',
-              }}>
-              {data.lastName}
-            </Text>
-          </View>
         </View>
         <View
           style={{
