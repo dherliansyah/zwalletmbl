@@ -1,33 +1,33 @@
-{
+  {
   "project_info": {
-    "project_number": "624698165344",
-    "project_id": "zwalletnotification",
-    "storage_bucket": "zwalletnotification.appspot.com"
+    "project_number": "675552890760",
+    "project_id": "zwalletfront",
+    "storage_bucket": "zwalletfront.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:624698165344:android:f95e1250fa79354e3b5b05",
+        "mobilesdk_app_id": "1:675552890760:android:926a4560728847c513b43d",
         "android_client_info": {
           "package_name": "com.zwallet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "624698165344-9htq69knndsr43octm3i3m4pl3h30tm3.apps.googleusercontent.com",
+          "client_id": "675552890760-4smcfjb8vlbrm7llv0iep1897fiiam39.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCVvSF3-8f6IG1rPebsQAe-4DVYUz2aVek"
+          "current_key": "AIzaSyDF6xhJ1n3QqNKLWBhZXCNzvRAD9tORQuc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "624698165344-9htq69knndsr43octm3i3m4pl3h30tm3.apps.googleusercontent.com",
+              "client_id": "675552890760-4smcfjb8vlbrm7llv0iep1897fiiam39.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

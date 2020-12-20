@@ -4,7 +4,7 @@ import {TextInput, Button, IconButton} from 'react-native-paper';
 import {useDispatch} from 'react-redux';
 import {onLogin} from '../../redux/actions/Auth';
 import {useSelector} from 'react-redux';
-
+import messaging from '@react-native-firebase/messaging';
 
 const Login = ({navigation}) => {
   const inputPassword = React.useRef();
@@ -24,19 +24,24 @@ const Login = ({navigation}) => {
 
   const onSubmit = () => {
     setLoading(true)
-    const credential = {
-      email: email,
-      password: password,
-    }
-
-    const callbackHandler = (err, res) => {
-      // console.log(err, res)
-      setLoading(false)
-      if(!err)
-        navigation.replace('Home') 
-    }
-
-    dispatch(onLogin(credential, callbackHandler));
+    messaging().getToken()
+    .then(token => {
+      const credential = {
+        email: email,
+        password: password,
+        device: token
+      }
+  
+      const callbackHandler = (err, res) => {
+        // console.log(err, res)
+        setLoading(false)
+        console.log(err, res)
+        if(!err)
+          navigation.replace('Home') 
+      }
+  
+      dispatch(onLogin(credential, callbackHandler));
+    }) 
   };
 
   return (

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, Image, ActivityIndicator } from 'react-native';
+import { View, Alert, Text, Image, ActivityIndicator, ToastAndroid } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { Button, IconButton } from 'react-native-paper';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import messaging from '@react-native-firebase/messaging';
 // import {GetUsers} from '../../redux/actions/Users';
 // import {LoginLogout} from '../../redux/actions/Auth';
 import blank from '../../Icons/blank.png';
@@ -27,6 +28,15 @@ const Home = ({ navigation }) => {
 		dispatch(onUsers(token, callbackHandler));
 	}, []);
 
+	React.useEffect(() => {
+		const unsubscribe = messaging().onMessage(async (remoteMessage) => {
+			dispatch({ type: 'ADD_BALANCE', payload: remoteMessage.data.balance });
+			ToastAndroid.show(remoteMessage.notification.body + remoteMessage.data.balance, ToastAndroid.LONG);
+		});
+
+		return unsubscribe;
+	}, []);
+
 	// socket.emit('data-user', 45);
 	// socket.on('get-data', (data) => {
 	//   setBalance(data);
@@ -37,14 +47,14 @@ const Home = ({ navigation }) => {
 	// 		socket.off('get-data');
 	// 	};
 	// }, []);
-  // console.log(`http://192.168.100.9:8000/image/${data.photo}`);
-  if(loading){
-    return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <ActivityIndicator size="large" color="#000" />
-      </View>
-    )
-  }
+	// console.log(`http://192.168.100.9:8000/image/${data.photo}`);
+	if (loading) {
+		return (
+			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+				<ActivityIndicator size="large" color="#000" />
+			</View>
+		);
+	}
 	return (
 		<ScrollView style={{ backgroundColor: '#e9eef7' }}>
 			<View style={{ padding: 20 }}>
@@ -187,12 +197,12 @@ const Home = ({ navigation }) => {
 			>
 				<View style={{ paddingTop: 20, paddingLeft: 15 }}>
 					{!data.photo ? (
-												<Image
-                        style={{ width: 60, height: 55 }}
-                        source={{
-                          uri: `${URL_IMAGE}/images/${data.photo}`
-                        }}
-                      />
+						<Image
+							style={{ width: 60, height: 55 }}
+							source={{
+								uri: `${URL_IMAGE}/images/${data.photo}`
+							}}
+						/>
 					) : (
 						<Image
 							style={{ width: 60, height: 55 }}
