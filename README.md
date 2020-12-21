@@ -6,15 +6,21 @@
 <p align="center"><b>Apapun pengeluarannya pakai Zwallet in aja!</b></p>
 <p align="center"><b>#zwalletaja</b></p>
 
+## About
+
+Aplikasi dompet digital berbasis mobile. Digunakan untuk keperluan transaksi apapun, yang mempermudah penyimpanan uang secara digital yang dibekali fitur transfer dan topup saldo. Zwallet versi mobile ini dibuat dengan React Native, Redux, Paper dan Express JS.
+
 ## Tools:
 
 - Visual Studio Code
 - Postman
 - Android Emulator
 
-## Project Zwallet
+## How To Install
 
-- git clone https://github.com/dherliansyah/zwalletmbl.git
+- git clone git clone https://github.com/dherliansyah/zwalletmbl.git
+- cd zwalletmbl
+- yarn
 
 Username : 
 - dherliansyah@gmail.com
