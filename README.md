@@ -48,6 +48,8 @@ Password :
 
 ## Screen Notification Transfer
 
+<img src="https://user-images.githubusercontent.com/67412768/102753059-24b99280-439d-11eb-8bb7-2248aa3ac4c9.PNG" >
+
 ## Screen Profile
 
 <img src="https://user-images.githubusercontent.com/67412768/102751773-fd61c600-439a-11eb-9883-41c79332f339.PNG" >
