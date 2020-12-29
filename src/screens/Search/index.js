@@ -113,39 +113,6 @@ const Search = ({ navigation }) => {
 					returnKeyType="search"
 					onChangeText={(e) => setusername(e)}
 				/>
-				{/* <View style={{marginTop: 30}}>
-          <Text style={{fontSize: 18, color: '#514F5B', fontWeight: 'bold'}}>
-            Quick Access
-          </Text>
-          <View style={{flexDirection: 'row', marginTop: 30}}>
-            <View
-              style={{
-                flex: 1,
-                marginLeft: 10,
-                flexDirection: 'column',
-                backgroundColor: '#fff',
-                width: 96,
-                height: 146,
-                borderRadius: 10,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Image source={require('../../Icons/rectangle.png')} />
-              <Text
-                style={{
-                  paddingTop: 10,
-                  fontWeight: 'bold',
-                  color: '#4D4B57',
-                  fontSize: 16,
-                }}
-                onPress={() => navigation.navigate('Amount')}>
-                Rian
-              </Text>
-              <Text>-3822</Text>
-            </View>
-          </View>
-        </View> */}
-
 				<View style={{ marginTop: 30, marginBottom: 20 }}>
 					<Text style={{ fontSize: 18, color: '#514F5B', fontWeight: 'bold' }}>All Contacts</Text>
 					{/* <Text style={{fontSize: 15, color: '#8F8F8F'}}>
